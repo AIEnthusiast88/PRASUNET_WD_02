@@ -1,0 +1,123 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #a20be8, #75056b);
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+}
+
+.container {
+    text-align: center;
+    background: #6d32cc;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Gradient animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: pulse 1s infinite;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button:active {
+    background: #003f7f;
+    transform: scale(0.95);
+}
+
+#laps {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#laps li {
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.3s;
+}
+
+#laps li:nth-child(odd) {
+    background: #d1ecf1;
+}
+
+#laps li:nth-child(even) {
+    background: #f5c6cb;
+}
+
+/* Container fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Display pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
